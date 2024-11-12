@@ -1,43 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Julia Štolová</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/69a6e8d431.js" crossorigin="anonymous"></script>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+    <div class="navigation">
+        <h3 id="home">Home</h3>
+        <h3 id="about">About</h3>
+        <h3 id="experience">Experience</h3>
+        <h3 id="projects">Projects</h3>
+        <h3 id="contact">Contact</h3>
+        <button id="darkmode_btn">
+            <i class="fa-solid fa-sun"></i>
+        </button>
+        <div class="dropdown">
+            <button class="dropbtn">
+                <h3 data-i18n="language-btn">EN</h3>
+                <div id="dropdown" class="dropdown-content">
+                    <h3 id="en">English</h3>
+                    <h3 id="cz">Čeština</h3>
+                    <h3 id="ru"">Русский</h3>
+                </div>
+            </button>
+        </div>
+    </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <div class="home" id="home-section">
+        <h1 data-i18n="h_h1">Julia Štolová</h1>
+        <h2 data-i18n="h_h2">Game Developer, Teacher, IT Student</h2>
+        <div class="home-contact">
+            <i class="fa-brands fa-discord"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+    </div>
+
+    <div class="about" id="about-section">
+        <h1 data-i18n="a_h1">About me</h1>
+        <div class="about-content">
+            <div>
+                <p data-i18n="a_p1">Greetings, I'm Julia.</p>
+                <p data-i18n="a_p2">I am a second-year student at Smíchovská Secondary Technical School and Gymnasium,
+                    studying Information
+                    Technology with a focus on programming. I have experience with the Unity game engine, programming in
+                    languages like C#, HTML, CSS, and a bit of JavaScript, and I'm willing to continue developing my
+                    skills.
+                    I enjoy playing the piano, going to the theater, cooking, and solving logic puzzles. In group
+                    projects,
+                    I usually take on the role of leader and take responsibility for the whole team. At the moment, I’m
+                    trying to discover myself by exploring different fields, hobbies, and figuring out what I enjoy the
+                    most. I enjoy meeting new people and building friendly relationships, and I’m not afraid to take the
+                    first step. One small detail to add – I prefer tea over coffee.</p>
+            </div>
+            <img src="/pictures/me-3.png" alt="My photo">
+        </div>
+    </div>
+
+    <div class="experience" id="experience-section">
+        <h1 data-i18n="e_h1">Experience</h1>
+        <div class="experience-content">
+            <div class="skill-1">
+                <h3 data-i18n="e_sk1_date">September 2024 - now</h3>
+                <h1 data-i18n="e_sk1_h1"">Game Development Teacher</h1>
+                <h2 data-i18n=" e_sk1_h2">Logiscool</h2>
+                    <ul>
+                        <li data-i18n="e_sk1_li1">Teaching basics of the game development and programming in Unity</li>
+                        <li data-i18n="e_sk1_li2">Creating individual game projects</li>
+                        <li data-i18n="e_sk1_li3">Communicating and helping children</li>
+                        <li data-i18n="e_sk1_li4">Giving a constructive feedback and teaching how to learn individualy
+                        </li>
+                    </ul>
+            </div>
+            <div class="skill-2">
+                <h3 data-i18n="e_sk2_date">March 2024 - October 2024</h3>
+                <h1 data-i18n="e_sk2_h1">Hostess</h1>
+                <h2 data-i18n="e_sk2_h2">Prague Congress Center</h2>
+                <ul>
+                    <li data-i18n="e_sk2_li1">Communicating with clients</li>
+                    <li data-i18n="e_sk2_li2">Helping with organization of events</li>
+                    <li data-i18n="e_sk2_li3">Working in a team</li>
+                </ul>
+            </div>
+            <div class="skill-3">
+                <h3 data-i18n="e_sk3_date">January 2024</h3>
+                <h1 data-i18n="e_sk3_h1">Private Teacher</h1>
+                <h2 data-i18n="e_sk3_h2">Private lessons</h2>
+                <ul>
+                    <li data-i18n="e_sk3_li1">Teaching how to learn</li>
+                    <li data-i18n="e_sk3_li2">Preparation for upcoming exams</li>
+                    <li data-i18n="e_sk3_li3">Communicating and helping out with tough topics</li>
+                    <li data-i18n="e_sk3_li4">Helping to improve grades in school</li>
+                </ul>
+            </div>
+            <div class="skill-4">
+                <h3 data-i18n="e_sk4_date">August 2023</h3>
+                <h1 data-i18n="e_sk4_h1">Crew</h1>
+                <h2 data-i18n="e_sk4_h2">McDonald's</h2>
+                <ul>
+                    <li data-i18n="e_sk4_li1">Working in a team</li>
+                    <li data-i18n="e_sk4_li2">Communicating with clients and solving problem situations</li>
+                    <li data-i18n="e_sk4_li3">Handling high-stress situations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects" id="projects-section">
+        <h1 data-i18n="p_h1">Projects</h1>
+        <div class="projects-content">
+            <h2 data-i18n="p_h2">Snake</h2>
+            <p data-i18n="p_p1">Welcome to my very first game project, developed in Unity using C#. Currently in its
+                Alpha version, this
+                game draws inspiration from the classic arcade game Snake, originally created in 1976. The objective is
+                simple yet addictive: grow your snake as much as possible by consuming fruits.
+                I've been working solo on this project. You can check it out on <a
+                    href="https://github.com/JuliaStolova/Snake" target="_blank">Github!</a></p>
+            <div class="project-1-img">
+                <img src="/pictures/snake.png" alt="Snake">
+            </div>
+            <h4 data-i18n="p_p2">Snake preview</h4>
+        </div>
+    </div>
+
+    <div class="contact" id="contact-section">
+        <h1 data-i18n="c_h1">Feel free to contact me on any of these platform!</h1>
+        <div class="contact-icons">
+            <i class="fa-brands fa-discord"></i>
+            <i class="fa-brands fa-linkedin""></i>
+                <i class=" fa-brands fa-instagram"></i>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <p data-i18n=" footer_email">Email: stolova.jul@gmail.com</p>
+    <p data-i18n="footer_phone">Phone: +420 773 880 753</p>
+    <p data-i18n="footer_author">© 2024 Julia Štolová</p>
+</footer>
+
 </html>
