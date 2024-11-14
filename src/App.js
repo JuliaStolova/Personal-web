@@ -1,12 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const App = () => {
-    const {t, i18n} = useTranslation();
+    const { t, i18n } = useTranslation();
+    const [dropdownOpen, setDropdownOpen] = React.useState(false);
+    const [darkmode, setDarkmode] = React.useState(false);
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
     };
+
+    const ToggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+        console.log(dropdownOpen);
+    }
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.matches('.dropbtn')) {
+                setDropdownOpen(false);
+            }
+        }
+
+        window.addEventListener('click', handleClickOutside);
+        return () => {
+            window.removeEventListener('click', handleClickOutside);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (i18n.language === 'ru') {
+            document.body.classList.add('ru');
+        }
+        else {
+            document.body.classList.remove('ru');
+        }
+    })
+
+    useEffect(() => {
+        const darkmode_btn = document.getElementById('darkmode_btn');
+        const body = document.body;
+        darkmode_btn.addEventListener('click', () => {
+            body.classList.toggle('darkmode');
+            setDarkmode(!darkmode);
+        })
+    })
 
     return (
         <div>
@@ -20,13 +58,15 @@ const App = () => {
                     <i className="fa-solid fa-sun"></i>
                 </button>
                 <div className="dropdown">
-                    <button className="dropbtn">
-                        <h3>{t('language-btn')}</h3>
-                        <div id="dropdown" className="dropdown-content">
-                            <h3 id="en" onClick={() => changeLanguage('en')}>English</h3>
-                            <h3 id="cz" onClick={() => changeLanguage('cz')}>Čeština</h3>
-                            <h3 id="ru" onClick={() => changeLanguage('ru')}>Русский</h3>
-                        </div>
+                    <button className="dropbtn" onClick={ToggleDropdown}>
+                        <h3>{t('language-button')}</h3>
+                        {dropdownOpen && (
+                            <div id="dropdown" className="dropdown-content">
+                                <h3 id="en" onClick={() => changeLanguage('en')}>English</h3>
+                                <h3 id="cz" onClick={() => changeLanguage('cs')}>Čeština</h3>
+                                <h3 id="ru" onClick={() => changeLanguage('ru')}>Русский</h3>
+                            </div>
+                        )}
                     </button>
                 </div>
             </div>
@@ -104,7 +144,7 @@ const App = () => {
                 <h1>{t('p_h1')}</h1>
                 <div className="projects-content">
                     <h2>{t('p_h2')}</h2>
-                    <p>{t('p_p1')}</p>
+                    <p>{t('p_p1')} <a href="https://github.com/JuliaStolova/Snake\" target="_blank">Github!</a></p>
                     <div className="project-1-img">
                         <img src="/pictures/snake.png" alt="Snake" />
                     </div>

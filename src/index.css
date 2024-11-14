@@ -1,15 +1,16 @@
 @font-face {
   font-family: varelaround;
-  src: url(/fonts/VarelaRound-Regular.ttf);
+  src: url(./fonts/VarelaRound-Regular.ttf);
 }
 
 @font-face {
   font-family: vagrounded;
-  src: url(/fonts/18VAG\ Rounded\ M\ Normal.ttf);
+  src: url(./fonts/18VAG\ Rounded\ M\ Normal.ttf);
 }
 
+
 html,
-body {
+body{
   margin: 0;
   padding: 0;
   font-family: 'varelaround';
@@ -17,6 +18,36 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  line-height: 1.3;
+}
+
+.ru {
+  font-family: 'vagrounded';
+  letter-spacing: 1px;
+  .dropbtn h3 {
+    font-family: 'vagrounded';
+  }
+  .dropbtn #en, #cz {
+    font-family: 'varelaround';
+  }
+  .about p, .experience h1, .projects h4, p {
+    line-height: 1.3;
+  }
+}
+
+.darkmode {
+  background-color: #221c1c;
+  color: rgb(216, 182, 182);
+  h1 {
+    color: rgb(255, 251, 251);
+  }
+  i {
+    color: rgb(176, 121, 121);
+  }
+  .navigation, .navigation button, #darkmode_btn i {
+    background-color: #221c1c;
+    color: rgb(216, 182, 182);
+  }
 }
 
 h1 {
@@ -78,7 +109,8 @@ i {
 }
 
 .dropdown-content {
-  display: none;
+  display: block;
+  text-decoration: none;
   position: absolute;
   background-color: rgb(210 18 18);
   box-shadow: 0px 8px 16px 0px rgba(210, 18, 18, 0.2);
@@ -107,6 +139,9 @@ i {
 
 .home {
   min-height: 100%;
+  max-width: 100%;
+  margin-top: 30vh;
+  margin-bottom: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,6 +169,7 @@ i {
 }
 
 .about {
+  margin-bottom: 10vh;
   min-height: 100%;
   text-align: justify;
   padding: 50px;
@@ -229,6 +265,9 @@ h4 {
 
 
 .contact {
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  padding: 50px;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -253,7 +292,7 @@ footer p {
 
 footer {
   padding: 20px;
-  border-top: black 2.5px solid;
+  border-top: #9c9c9c 2.5px solid;
 }
 
 /*-----------------------------------------------------------*/
