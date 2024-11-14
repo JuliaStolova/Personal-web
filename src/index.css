@@ -52,8 +52,13 @@ a {
   color: rgb(210, 18, 18)
 }
 
-.navigation h3 {
+.navigation h3{
   cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.navigation h3:hover {
+  color: rgb(210, 18, 18);
 }
 
 i {
@@ -321,6 +326,10 @@ footer {
   #darkmode_btn i {
     background-color: #221c1c;
     color: rgb(216, 182, 182);
+  }
+
+  .navigation h3:hover {
+    color: rgb(255, 251, 251);
   }
 
   .dropbtn:hover,
