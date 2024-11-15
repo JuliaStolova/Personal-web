@@ -25,7 +25,7 @@ body {
   font-family: 'vagrounded';
   letter-spacing: 1px;
 
-  .dropbtn h3 {
+  .dropbtn h4 {
     font-family: 'vagrounded';
   }
 
@@ -57,13 +57,22 @@ a {
   transition: color 0.3s ease-in-out;
 }
 
-.navigation h3:hover {
+.navigation h3:hover{
   color: rgb(210, 18, 18);
+}
+
+.navigation h4 {
+  font-size: 18px;
 }
 
 i {
   cursor: pointer;
   color: #9c9c9c;
+  transition: color 0.3s ease-in-out;
+}
+
+i:hover {
+  color: rgb(210, 18, 18);
 }
 
 .navigation {
@@ -103,15 +112,15 @@ i {
 
 .dropbtn:hover,
 .dropbtn:focus {
-  background-color: #ffd0d0;
+  background-color: #b3b3b3;
 }
 
 .dropdown-content {
   display: block;
   text-decoration: none;
   position: absolute;
-  background-color: rgb(210 18 18);
-  box-shadow: 0px 8px 16px 0px rgba(210, 18, 18, 0.2);
+  background-color: rgb(114, 114, 114);
+  box-shadow: 0px 8px 16px 0px rgba(65, 65, 65, 0.2);
   padding: 10px;
   color: white;
   top: 100%;
@@ -133,6 +142,7 @@ i {
 #darkmode_btn i {
   color: black;
   font-size: 20px;
+  transition: color 0.3s ease-in-out;
 }
 
 .home {
@@ -340,6 +350,10 @@ footer {
   .dropdown-content {
     background-color: #755252;
   }
+
+  i:hover {
+    color: rgb(255, 251, 251);
+  }
 }
 
 /*-----------------------------------------------------------*/
@@ -347,3 +361,86 @@ footer {
 /*-----------------------------------------------------------*/
 
 /* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    font-size: 12px;
+    width: 100%;
+    max-width: 100%;
+    gap: 2vw;
+  }
+
+  .navigation h4 {
+    font-size: 15px;
+  }
+
+  .dropbtn {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  #darkmode_btn i {
+    font-size: 15px;
+  }
+
+  .home h1 {
+    font-size: 50px;
+  }
+
+  .home h2 {
+    font-size: 20px;
+  }
+
+  .home-contact {
+    font-size: 30px;
+  }
+
+  .about img {
+    max-width: 200px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-content {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-content h1 {
+    font-size: 20px;
+  }
+
+  .experience-content h3 {
+    font-size: 15px;
+  }
+
+  .experience-content ul,
+  li {
+    font-size: 15px;
+  }
+
+  .projects, .about, .experience, .contact {
+    padding: 20px;
+  }
+
+  .projects h1 {
+    font-size: 30px;
+  }
+
+  .projects h4 {
+    font-size: 15px;
+  }
+
+  .projects-content img {
+    max-width: 300px;
+  }
+
+  .contact-icons {
+    font-size: 30px;
+  }
+
+  footer p {
+    font-size: 15px;
+  }
+}

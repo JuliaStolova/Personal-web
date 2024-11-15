@@ -14,6 +14,23 @@ const App = () => {
         setDropdownOpen(!dropdownOpen);
         console.log(dropdownOpen);
     }
+    
+    const scrollToID = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            if (id === 'home-section') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return;
+            }
+            window.scrollTo({
+                top: element.offsetTop,
+                behavior: 'smooth'
+            });
+        } 
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -40,31 +57,40 @@ const App = () => {
     useEffect(() => {
         const darkmode_btn = document.getElementById('darkmode_btn');
         const body = document.body;
-        darkmode_btn.addEventListener('click', () => {
-            body.classList.toggle('darkmode');
-            setDarkmode(!darkmode);
-        })
-    })
+        if (darkmode) {
+            body.classList.add('darkmode');
+            darkmode_btn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+        else {
+            body.classList.remove('darkmode');
+            darkmode_btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        }
+    }, [darkmode]);
+
+    const toggleDarkmode = () => {
+        setDarkmode(!darkmode);
+    }
+
 
     return (
         <div>
             <div className="navigation">
-                <h3 id="home">{t('home')}</h3>
-                <h3 id="about">{t('about')}</h3>
-                <h3 id="experience">{t('experience')}</h3>
-                <h3 id="projects">{t('projects')}</h3>
-                <h3 id="contact">{t('contact')}</h3>
-                <button id="darkmode_btn">
-                    <i className="fa-solid fa-sun"></i>
+                <h3 id="home" onClick={() => scrollToID('home-section')}>{t('home')}</h3>
+                <h3 id="about" onClick={() => scrollToID('about-section')}>{t('about')}</h3>
+                <h3 id="experience" onClick={() => scrollToID('experience-section')}>{t('experience')}</h3>
+                <h3 id="projects" onClick={() => scrollToID('projects-section')}>{t('projects')}</h3>
+                <h3 id="contact" onClick={() => scrollToID('contact-section')}>{t('contact')}</h3>
+                <button id="darkmode_btn" onClick={toggleDarkmode}>
+                    <i className={`fa-solid ${darkmode ? 'fa-moon' : 'fa-sun'}`}></i>
                 </button>
                 <div className="dropdown">
                     <button className="dropbtn" onClick={ToggleDropdown}>
-                        <h3>{t('language-button')}</h3>
+                        <h4>{t('language-button')}</h4>
                         {dropdownOpen && (
                             <div id="dropdown" className="dropdown-content">
-                                <h3 id="en" onClick={() => changeLanguage('en')}>English</h3>
-                                <h3 id="cz" onClick={() => changeLanguage('cs')}>Čeština</h3>
-                                <h3 id="ru" onClick={() => changeLanguage('ru')}>Русский</h3>
+                                <h4 id="en" onClick={() => changeLanguage('en')}>English</h4>
+                                <h4 id="cz" onClick={() => changeLanguage('cs')}>Čeština</h4>
+                                <h4 id="ru" onClick={() => changeLanguage('ru')}>Русский</h4>
                             </div>
                         )}
                     </button>
@@ -75,9 +101,9 @@ const App = () => {
                 <h1>{t('h_h1')}</h1>
                 <h2>{t('h_h2')}</h2>
                 <div className="home-contact">
-                    <i className="fa-brands fa-discord"></i>
-                    <i className="fa-brands fa-linkedin"></i>
-                    <i className="fa-brands fa-instagram"></i>
+                    <a href="https://discordapp.com/users/746376744189296651" target="_blank"><i className="fa-brands fa-discord"></i></a>
+                    <a href="https://www.linkedin.com/in/julia-stolova/" target="_blank"><i className="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/juliastolova/" target="_blank"><i className="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -155,9 +181,9 @@ const App = () => {
             <div className="contact" id="contact-section">
                 <h1>{t('c_h1')}</h1>
                 <div className="contact-icons">
-                    <i className="fa-brands fa-discord"></i>
-                    <i className="fa-brands fa-linkedin"></i>
-                    <i className="fa-brands fa-instagram"></i>
+                    <a href="https://discordapp.com/users/746376744189296651" target="_blank"><i className="fa-brands fa-discord"></i></a>
+                    <a href="https://www.linkedin.com/in/julia-stolova/" target="_blank"><i className="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/juliastolova/" target="_blank"><i className="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
 
