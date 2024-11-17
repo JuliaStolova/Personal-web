@@ -14,7 +14,7 @@ const App = () => {
         setDropdownOpen(!dropdownOpen);
         console.log(dropdownOpen);
     }
-    
+
     const scrollToID = (id) => {
         const element = document.getElementById(id);
         if (element) {
@@ -29,8 +29,18 @@ const App = () => {
                 top: element.offsetTop,
                 behavior: 'smooth'
             });
-        } 
+        }
     };
+
+    const navMenu = () => {
+        const nav = document.getElementById('navbar');
+        if (nav.className === 'navigation') {
+            nav.className += ' responsive';
+        }
+        else {
+            nav.className = 'navigation';
+        }
+    }
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -74,7 +84,34 @@ const App = () => {
 
     return (
         <div>
-            <div className="navigation">
+            <div className="topnav">
+                <button id="darkmode_btn" onClick={toggleDarkmode}>
+                    <i className={`fa-solid ${darkmode ? 'fa-moon' : 'fa-sun'}`}></i>
+                </button>
+                <div className="dropdown">
+                    <button className="dropbtn" onClick={ToggleDropdown}>
+                        <h4>{t('language-button')}</h4>
+                        {dropdownOpen && (
+                            <div id="dropdown" className="dropdown-content">
+                                <h4 id="en" onClick={() => changeLanguage('en')}>English</h4>
+                                <h4 id="cz" onClick={() => changeLanguage('cs')}>Čeština</h4>
+                                <h4 id="ru" onClick={() => changeLanguage('ru')}>Русский</h4>
+                            </div>
+                        )}
+                    </button>
+                </div>
+                        <div className="myLinks">
+                            <h3 id="home" onClick={() => scrollToID('home-section')}>{t('home')}</h3>
+                            <h3 id="about" onClick={() => scrollToID('about-section')}>{t('about')}</h3>
+                            <h3 id="experience" onClick={() => scrollToID('experience-section')}>{t('experience')}</h3>
+                            <h3 id="projects" onClick={() => scrollToID('projects-section')}>{t('projects')}</h3>
+                            <h3 id="contact" onClick={() => scrollToID('contact-section')}>{t('contact')}</h3>
+                        </div>
+                <a href="javascript:void(0);" className="icon" onClick={navMenu}>
+                    <i className="fa-solid fa-bars"></i>
+                </a>
+            </div>
+            <div className="navigation" id="navbar">
                 <h3 id="home" onClick={() => scrollToID('home-section')}>{t('home')}</h3>
                 <h3 id="about" onClick={() => scrollToID('about-section')}>{t('about')}</h3>
                 <h3 id="experience" onClick={() => scrollToID('experience-section')}>{t('experience')}</h3>
@@ -95,6 +132,7 @@ const App = () => {
                         )}
                     </button>
                 </div>
+
             </div>
 
             <div className="home" id="home-section">
