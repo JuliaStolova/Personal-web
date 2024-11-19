@@ -33,12 +33,12 @@ const App = () => {
     };
 
     const navMenu = () => {
-        const nav = document.getElementById('navbar');
-        if (nav.className === 'navigation') {
-            nav.className += ' responsive';
+        const linkNav = document.getElementById("topnav");
+        if (linkNav.className === "topnav") {
+            linkNav.className += " responsive"
         }
         else {
-            nav.className = 'navigation';
+            linkNav.className = "topnav";
         }
     }
 
@@ -84,10 +84,7 @@ const App = () => {
 
     return (
         <div>
-            <div className="topnav">
-                <button id="darkmode_btn" onClick={toggleDarkmode}>
-                    <i className={`fa-solid ${darkmode ? 'fa-moon' : 'fa-sun'}`}></i>
-                </button>
+            <div className="topnav" id="topnav">
                 <div className="dropdown">
                     <button className="dropbtn" onClick={ToggleDropdown}>
                         <h4>{t('language-button')}</h4>
@@ -100,16 +97,22 @@ const App = () => {
                         )}
                     </button>
                 </div>
-                        <div className="myLinks">
-                            <h3 id="home" onClick={() => scrollToID('home-section')}>{t('home')}</h3>
-                            <h3 id="about" onClick={() => scrollToID('about-section')}>{t('about')}</h3>
-                            <h3 id="experience" onClick={() => scrollToID('experience-section')}>{t('experience')}</h3>
-                            <h3 id="projects" onClick={() => scrollToID('projects-section')}>{t('projects')}</h3>
-                            <h3 id="contact" onClick={() => scrollToID('contact-section')}>{t('contact')}</h3>
-                        </div>
-                <a href="javascript:void(0);" className="icon" onClick={navMenu}>
-                    <i className="fa-solid fa-bars"></i>
-                </a>
+                <button id="darkmode_btn" onClick={toggleDarkmode}>
+                    <i className={`fa-solid ${darkmode ? 'fa-moon' : 'fa-sun'}`}></i>
+                </button>
+                <div className="myLinks">
+                    <h3 id="home" onClick={() => scrollToID('home-section')}>{t('home')}</h3>
+                    <h3 id="about" onClick={() => scrollToID('about-section')}>{t('about')}</h3>
+                    <h3 id="experience" onClick={() => scrollToID('experience-section')}>{t('experience')}</h3>
+                    <h3 id="projects" onClick={() => scrollToID('projects-section')}>{t('projects')}</h3>
+                    <h3 id="contact" onClick={() => scrollToID('contact-section')}>{t('contact')}</h3>
+                </div>
+                <button>
+
+                    <a href="javascript:void(0);" className="icon" onClick={navMenu}>
+                        <i className="fa-solid fa-bars"></i>
+                    </a>
+                </button>
             </div>
             <div className="navigation" id="navbar">
                 <h3 id="home" onClick={() => scrollToID('home-section')}>{t('home')}</h3>

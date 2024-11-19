@@ -314,6 +314,15 @@ footer {
   background-color: #221c1c;
   color: rgb(216, 182, 182);
 
+  .topnav {
+    background-color: #221c1c;
+  }
+
+  .topnav button {
+    background-color: #221c1c;
+    color: rgb(216, 182, 182);
+  }
+
   h1,
   a {
     color: rgb(255, 251, 251);
@@ -378,18 +387,26 @@ footer {
   }
 
   .topnav {
-    display: block;
-    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
     background-color: white;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1;
+  }
+
+  .topnav button {
+    background-color: white;
+    border: none;
+    font-family: "varelaround";
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .dropbtn {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
     padding-bottom: 0px;
     padding-top: 0px;
     display: block;
@@ -397,12 +414,22 @@ footer {
     box-sizing: content-box;
   }
 
-  #darkmode_btn i {
-    font-size: 15px;
+  .dropdown, .icon  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    text-decoration: none;
+  }
+
+  #darkmode_btn i, .dropbtn {
+    font-size: 20px;
   }
 
   i {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   .home h1 {
@@ -478,4 +505,12 @@ footer {
   footer p {
     font-size: 15px;
   }
+}
+
+@media screen and (max-width: 828px) {
+
+  .topnav.responsive .myLinks {
+    display: none;
+  }
+
 }
